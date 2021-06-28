@@ -1,20 +1,27 @@
 import { Button } from '@material-ui/core'
 import { withStyles, WithStyles, createStyles } from '@material-ui/styles'
 import React from 'react'
-import { UseFileSelector } from './UseFileSelector'
 
 interface UploadContainerProps extends WithStyles<typeof styles> {
-
+}
+interface UploadContainerState {
+    getFiles: () => void
 }
 
 class UploadContainer extends React.Component<UploadContainerProps> {
+    
     render() {
         const classes = this.props.classes
         return (
             <div className={classes.container}>
-                {/* <Button onClick={UseFileSelector()}> click me </Button> */}
+
+                <Button variant="contained" component="label">
+                Upload File
+                <input type="file" hidden />
+                </Button>
             </div>
         )
+
     }
 }
 
