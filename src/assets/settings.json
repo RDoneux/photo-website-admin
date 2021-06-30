@@ -1,0 +1,6 @@
+{
+    "settings": {
+        "domain": "http://backend.website.robo-automator.com:",
+        "port": "8080"
+    }
+}

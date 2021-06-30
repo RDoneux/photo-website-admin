@@ -4,22 +4,21 @@ import React from 'react'
 
 interface UploadContainerProps extends WithStyles<typeof styles> {
 }
-interface UploadContainerState {
-    getFiles: () => void
-}
 
 class UploadContainer extends React.Component<UploadContainerProps> {
-    
+
     render() {
         const classes = this.props.classes
+        const response = document.querySelector('input')
         return (
             <div className={classes.container}>
-
-                <Button variant="contained" component="label">
-                Upload File
-                <input type="file" hidden />
-                </Button>
-            </div>
+                <div className={classes.uploadContent}>
+                    <Button className={classes.button} variant="contained" component="label">
+                        Upload Image
+                        <input type="file" hidden accept="image/png, image/jpeg" onClick={() => {alert(response)}} />
+                    </Button>
+                </div>
+            </div>  
         )
 
     }
@@ -36,6 +35,16 @@ const styles = createStyles({
         marginTop: '20px',
         alignSelf: 'center',
         borderRadius: '30px',
+        display: 'flex',
+    },
+    uploadContent: {
+        display: 'flex',
+        width: '100%',
+        alignSelf: 'center',
+        justifyContent: 'center',
+    },
+    button: {
+        background: 'white',
     }
 
 })

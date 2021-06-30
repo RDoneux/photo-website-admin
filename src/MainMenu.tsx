@@ -29,8 +29,12 @@ class MainMenu extends React.Component<MainMenuProps> {
 
 const styles = createStyles({
     page: {
-        width: '100vw',
-        height: '100vh',
+        //width: '100vw',
+        //height: '100vh',
+        position: 'relative',
+        minWidth: '100vw',
+        minHeight: '100vh',
+        padding: '0px',
         display: 'flex',
         flexDirection: 'column',
         background: 'darkgray',
